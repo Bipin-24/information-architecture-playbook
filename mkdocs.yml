@@ -115,6 +115,7 @@ plugins:
       alias_type: redirect
   - git-revision-date-localized:
       type: date
+      fallback_to_build_date: true
   - meta:
       meta_file: .meta.yml
   - meta-descriptions
