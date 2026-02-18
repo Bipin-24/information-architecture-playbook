@@ -77,8 +77,8 @@ extra:
       link: /de/
       lang: de
   social:
-    - icon: fontawesome/brands/bitbucket
-      link: https://alm.actian.com/bitbucket/users/bpandey/repos/mkdocs_poc/browse
+    - icon: fontawesome/brands/github
+      link: https://github.com/Bipin-24/information-architecture-playbook
   version:
     provider: mike
   analytics: 
@@ -86,9 +86,10 @@ extra:
     property: G-7LF0XY95M1
 
 # Repository
-repo_url: https://alm.actian.com/bitbucket/users/bpandey/repos/mkdocs_poc
-repo_name: ZEENEA/mkdocs_poc
-edit_uri: "browse/docs"
+repo_url: https://github.com/Bipin-24/information-architecture-playbook
+repo_name: Bipin-24/information-architecture-playbook
+# GitHub edit URI format (branch/main/docs path)
+edit_uri: "edit/main/docs"
 
 # Customization
 extra_css:
@@ -119,5 +120,7 @@ plugins:
   - meta-descriptions
 
 # Hooks
-hooks:
-  - hooks/bitbucket_edit_url.py
+# The custom Bitbucket edit URL hook is no longer needed now that the
+# repository is hosted on GitHub and the theme can generate proper edit
+# links automatically.
+hooks: []
