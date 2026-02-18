@@ -1,0 +1,16 @@
+title: APIs
+nav:
+    - sample-api.md
+    - telmai-configuration-api.md
+    - zeenea-public-apis.md
+    - zeenea-catalog-api-v1.md
+    - zeenea-catalog-api-v2.md
+    - zeenea-graphql-api-v2-limitations.md
+    - zeenea-catalog-design-api.md
+    - zeenea-data-product-api.md
+    - zeenea-access-request-api.md
+    - zeenea-user-management-api.md
+    - zeenea-scim-api.md
+    - zeenea-audit-trail-apis.md
+    - zeenea-api-lifecycle.md
+    - zeenea-security-flaws-management.md

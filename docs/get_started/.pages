@@ -1,0 +1,13 @@
+title: Get Started
+nav:
+    - product_overview
+    - architecture_overview
+    - plantuml-example.md
+    - mermaid-example.md
+    - plan_deployment
+    - software_support.md
+    - system_requirements
+    - download
+    - gettingstartedwithDX.md
+    - access-software
+    - notices.md

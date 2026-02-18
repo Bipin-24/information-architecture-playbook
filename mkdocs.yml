@@ -1,0 +1,123 @@
+#Project Information
+site_name: Actian Data Intelligence Platform
+site_url: https://help.actian-software.com/digital-experience/9.5/latest/
+site_description: >-
+  Actian Digital Experience documentation for users and admins.
+use_directory_urls: false
+docs_dir: docs
+site_dir: site 
+# Theme Configuration
+theme:
+  name: material
+  logo: assets/dx_logo.png?v=2
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.instant
+    - navigation.prune
+    - search.highlight
+    - search.share
+    - search.suggest
+    - navigation.prune
+    - content.code.copy
+    - content.action.edit
+  custom_dir: theme_overrides/
+  icon:
+    repo: fontawesome/brands/github
+    edit: fontawesome/regular/pen-to-square
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  
+  # Static files
+  static_templates:
+    - 404.html
+
+# Markdown Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      pygments_lang_class: true
+      auto_title: false
+      linenums: false
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - plantuml_markdown:
+      server: https://www.plantuml.com/plantuml
+      format: svg
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      title: On this page
+  - meta    
+    
+
+# Copyright
+copyright: >-
+  Copyright &copy; 2019-2024, Actian
+
+extra:
+  alternate:
+    - name: English
+      lang: en
+    - name: Deutsch
+      link: /de/
+      lang: de
+  social:
+    - icon: fontawesome/brands/bitbucket
+      link: https://alm.actian.com/bitbucket/users/bpandey/repos/mkdocs_poc/browse
+  version:
+    provider: mike
+  analytics: 
+    provider: custom
+    property: G-7LF0XY95M1
+
+# Repository
+repo_url: https://alm.actian.com/bitbucket/users/bpandey/repos/mkdocs_poc
+repo_name: ZEENEA/mkdocs_poc
+edit_uri: "browse/docs"
+
+# Customization
+extra_css:
+  - assets/stylesheets/style.css?v=2
+  - stylesheets/minichat.css
+  - assets/stylesheets/actian-landing.css?v=4
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/marked/marked.min.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
+  - javascripts/extra.js
+  - javascripts/current.js
+  - javascripts/MiniChatJavaScript.js
+
+plugins:
+  - search
+  - awesome-pages
+  - tags
+  - swagger-ui-tag
+  - mike:
+      canonical_version: latest
+      alias_type: redirect
+  - git-revision-date-localized:
+      type: date
+  - meta:
+      meta_file: .meta.yml
+  - meta-descriptions
+
+# Hooks
+hooks:
+  - hooks/bitbucket_edit_url.py

@@ -1,0 +1,12 @@
+title: Zeenea Studio
+nav:
+    - zeenea-studio-overview.md
+    - zeenea-configuring-templates.md
+    - zeenea-studio-configure-glossary-model.md
+    - zeenea-studio-create-edit-delete-property.md
+    - zeenea-studio-create-delete-custom-item.md
+    - zeenea-custom-item-best-practices.md
+    - zeenea-studio-create-delete-responsibility.md
+    - zeenea-add-input-output-types.md
+    - zeenea-importing-datasets-or-visualizations.md
+    - zeenea-analytics-dashboard.md

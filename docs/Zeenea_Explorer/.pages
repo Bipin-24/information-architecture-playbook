@@ -1,0 +1,22 @@
+title: Zeenea Explorer
+nav:
+    - zeenea-explorer-overview.md
+    - zeenea-explorer-search.md
+    - zeenea-item-details-pages.md
+    - zeenea-data-lineage.md
+    - zeenea-data-model-diagram.md
+    - zeenea-view-360-diagram.md
+    - zeenea-data-profiling.md
+    - zeenea-data-sampling.md
+    - zeenea-query-language.md
+    - zeenea-ask-ai.md
+    - zeenea-data-product.md
+    - zeenea-glossary-hierarchy.md
+    - zeenea-searching-topics.md
+    - zeenea-searching-federated-catalog.md
+    - zeenea-explorer-export-search-results.md
+    - zeenea-favorite-items.md
+    - zeenea-access-requests.md
+    - zeenea-submit-suggestion.md
+    - zeenea-synchronization.md
+    - zeenea-microsoft-teams.md
