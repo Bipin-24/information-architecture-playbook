@@ -82,7 +82,7 @@ extra:
   version:
     provider: mike
   analytics: 
-    provider: custom
+    provider: google
     property: G-7LF0XY95M1
 
 # Repository
