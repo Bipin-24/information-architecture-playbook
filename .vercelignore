@@ -11,5 +11,4 @@ __pycache__/
 jenkins/
 utils/
 hooks/
-theme_overrides/
 *.log
