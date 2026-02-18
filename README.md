@@ -1,5 +1,5 @@
 # 📘 Information Architecture Playbook  
-*A Practical Framework for Designing Scalable Enterprise Content Ecosystems*
+*A Practical Framework for Designing Scalable Enterprise Content Ecosystems*  
 https://information-architecture-playbook-9zp09lqfd.vercel.app/index.html
 
 ---
