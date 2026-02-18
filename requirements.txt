@@ -1,10 +1,9 @@
-mkdocs-material==9.5.39
+mkdocs-material==9.7.1
 mike==2.1.1
 mkdocs-awesome-pages-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-minify-plugin
 mkdocs-swagger-ui-tag
 mkdocs-meta-descriptions-plugin
-mkdocs-meta-plugin
 plantuml-markdown
 pytz
