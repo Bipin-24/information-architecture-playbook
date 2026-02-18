@@ -1,0 +1,15 @@
+# Exclude files that don't need to be uploaded to Vercel
+*.pyc
+__pycache__/
+.DS_Store
+.git/
+.gitignore
+.vscode/
+*.md
+!docs/**/*.md
+!README.md
+jenkins/
+utils/
+hooks/
+theme_overrides/
+*.log
