@@ -137,6 +137,7 @@ plugins:
       alias_type: redirect
   - git-revision-date-localized:
       type: date
+      fallback_to_build_date: true
   - minify:
       minify_html: true
   - meta:
