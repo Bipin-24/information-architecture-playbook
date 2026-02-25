@@ -10,5 +10,9 @@ __pycache__/
 !README.md
 jenkins/
 utils/
-hooks/
+# keep hook scripts so mkdocs can use them
+!hooks/github_edit_url.py
+# if you need other hook files, remove the hooks/ line entirely or
+# explicitly whitelist them.  The hook directory used to be ignored.
+
 *.log
