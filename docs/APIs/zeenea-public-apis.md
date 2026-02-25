@@ -34,3 +34,37 @@ To use the APIs, you must authenticate using an API key. Follow these steps to a
     Replace `$APISECRET` with the API secret that you retrieved when creating the key.
 
  
+## Ingres SQL
+
+
+```ingres-sql
+exec sql begin declare section;
+type
+    Alpha = 'a'..'z';              {1 character}
+    Packed_6 = packed array[1..6]
+               of Char;            {6-char string}
+    Vary_6 = varying[6] of Alpha;
+var
+    letter: Alpha;
+    v_string : Vary_6;
+exec sql end declare section;
+```
+
+
+
+
+## OpenRoad 4gl
+
+```openroad-4gl
+on event clicked =
+declare
+    i integer;
+    s varchar(100);
+enddeclare
+begin
+    callproc myproc(param := ::globalvar);
+    message 'Button clicked';
+end;
+```
+
+

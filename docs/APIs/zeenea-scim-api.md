@@ -194,7 +194,7 @@ This access point can also be used to carry out filtering requests on an existin
 
 #### Example request:
 
-```
+``` bash
 curl —-request GET \
 --location 'https://[instance_name].zeenea.app/api/scim/v2/Users/?filter=userName%20co%20%22domain.com%22&sortBy=userName&sortOrder=ascending’ \
 --header 'Authorization: Bearer ’ \

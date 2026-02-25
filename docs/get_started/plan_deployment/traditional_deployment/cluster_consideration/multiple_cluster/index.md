@@ -35,7 +35,7 @@ It is important to understand that a cell's configuration has the notion of scop
     A resource that is defined at a cluster scope is visible to all cluster members, or server instances, in this cluster. However, it is not visible to any other servers in the same nodes.
 
 
-![The diagram depicts the concept of scope. ](../../../../../images/clusm_singlecell.jpg)
+![The diagram depicts the concept of scope. ](../../../images/clusm_singlecell.jpg)
 
 !!! note 
     Resources that are defined within a circle, can be seen by all other resources and scopes that are defined within that circle.

@@ -23,7 +23,7 @@ Use this roadmap if you are an organization with the following requirements:
 
 A cluster topology is versatile. You can use it to set up a production environment, a test environment, and more. The cluster topology diagram includes two horizontal nodes that are managed in the same cell. The nodes in the cluster use a common LDAP and database server. A remote search server is depicted too. In a cluster environment, you must use a remote search server.
 
-![Single cluster cell with two nodes. The managed cell connects to a remote database and LDAP server](../../../../../../images/Cluster.jpg)
+![Single cluster cell with two nodes. The managed cell connects to a remote database and LDAP server](../../../images/Cluster.jpg)
 
 ## Preparing for the installation process
 

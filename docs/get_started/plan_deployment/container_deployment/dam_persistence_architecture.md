@@ -2,9 +2,9 @@
 
 This topic describes the components of the Digital Asset Management (DAM) persistence. The updated DAM persistence feature is available with Actian Digital Experience (DX) 9.5 Container Update CF198 and later.
 
-![Digital Asset Management persistence component architecture](../../../images/dam_persistence_components.png "DAM persistence components")
+![Digital Asset Management persistence component architecture](../../images/dam_persistence_components.png "DAM persistence components")
 
-![Digital Asset Management persistence cluster architecture](../../../images/dam_persistence_cluster_architecture.png "DAM persistence cluster architecture")
+![Digital Asset Management persistence cluster architecture](../../images/dam_persistence_cluster_architecture.png "DAM persistence cluster architecture")
 
 ## `persistence-node`
 
@@ -65,7 +65,7 @@ scaling:
 
 The following example shows a persistence cluster in a successful deployment.
 
-![](../../../images/cluster_status_example.png "Persistence cluster in a successful deployment")
+![](../../images/cluster_status_example.png "Persistence cluster in a successful deployment")
 
 ## PostgreSQL version upgrade
 

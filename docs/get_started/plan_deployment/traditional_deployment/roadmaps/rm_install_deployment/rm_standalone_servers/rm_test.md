@@ -18,7 +18,7 @@ Use this roadmap if you are an organization with the following requirements:
 
 A stand-alone server topology is versatile. It is the foundation for a portal farm, authoring environment, test or rendering environment, small department-level deployments, and more. A typical stand-alone portal server topology includes a remote database and LDAP server. For many environments, it also includes a web server to direct incoming traffic.
 
-![A stand-alone portal server with remote database and LDAP server](../../../../../../images/Standalone.jpg)
+![A stand-alone portal server with remote database and LDAP server](../../../images/Standalone.jpg)
 
 ## Preparing for the installation process
 

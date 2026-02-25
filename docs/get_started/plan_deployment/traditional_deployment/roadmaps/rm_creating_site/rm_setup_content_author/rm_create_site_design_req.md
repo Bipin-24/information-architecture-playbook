@@ -8,7 +8,7 @@ You are an information architect that receives a design HTML prototype for a new
 
 The theme controls some of these design pieces. Other pieces of the design, such as page components, are developed in your web content library and are developed for content authors to add to the page with Site Manager.
 
-![An HTML prototype of a home page design. The image highlights the following aspects of the design: the header with company logo and navigation, banner with hero image and text, two promotional text components, two featured content items, two teasers, a sign up application, and a footer. The design requires a page layout with one column and one row.](../../../../../../images/LandingPage_update.jpg)
+![An HTML prototype of a home page design. The image highlights the following aspects of the design: the header with company logo and navigation, banner with hero image and text, two promotional text components, two featured content items, two teasers, a sign up application, and a footer. The design requires a page layout with one column and one row.](../../../images/LandingPage_update.jpg)
 
 1.   **Header with company logo and navigation**
 
@@ -54,7 +54,7 @@ The theme controls some of these design pieces. Other pieces of the design, such
 
 The landing page HTML prototype features many of the same design pieces that the home page HTML prototype includes. The landing page HTML prototype contains the same header and footer as the home page. The banner page component is also used on both the landing page and home page HTML prototypes. However, the landing page HTML prototype features a dynamic list page component that showcases multiple content items. The home page HTML prototype does not require the dynamic list page component.
 
-![HTML prototype of a landing page design. The image highlights the following aspects of the design: The header with company logo and navigation, banner with hero image and text, the dynamic list page component that references 4 content items, and a footer.](../../../../../../images/events.jpg)
+![HTML prototype of a landing page design. The image highlights the following aspects of the design: The header with company logo and navigation, banner with hero image and text, the dynamic list page component that references 4 content items, and a footer.](../../../images/events.jpg)
 
 -   **Header with company logo and navigation**
 

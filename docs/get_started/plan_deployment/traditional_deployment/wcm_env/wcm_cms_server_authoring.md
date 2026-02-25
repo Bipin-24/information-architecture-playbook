@@ -8,7 +8,7 @@ Most Actian Web Content Manager sites must support many content authors. A clust
 
 A standard authoring environment consists of a single authoring cluster that syndicates directly to either a staging or delivery environment. The following topology depicts an authoring environment that is configured to syndicate live items to the live production environment. The production server hosts the live site that visitors browse. Live items include published and expired items. The authoring environment is depicted as a stand-alone server, however it might be clustered.
 
-![Simple authoring environment that syndicates live changes to the website](../../../../images/wcm_authoring.jpg)
+![Simple authoring environment that syndicates live changes to the website](../../../images/wcm_authoring.jpg)
 
 The following activities occur in the authoring environment:
 
@@ -40,7 +40,7 @@ In the diagram, users conduct the following activities on each server.
 
 In addition, theme changes might be pushed to the testing environment to validate that the content elements and design elements integrate as expected. Design integration elements are not included in the topology diagram.
 
-![Authoring environment that is configured to send and receive changes to and from a testing environment. Live changes are then sent to the website.](../../../../images/wcm_authoring_uat.jpg)
+![Authoring environment that is configured to send and receive changes to and from a testing environment. Live changes are then sent to the website.](../../../images/wcm_authoring_uat.jpg)
 
 ## Decentralized authoring environments
 
@@ -63,7 +63,7 @@ In the diagram, users conduct the following activities on each server.
     -   Syndicate live items to testing environment \(not shown\)
     -   Syndicate live items to the live website
 
-![Complex decentralized authoring environment configuration that includes three authoring environments, one central authoring environment, and the live website environment](../../../../images/wcm_authoring_decentralized.jpg)
+![Complex decentralized authoring environment configuration that includes three authoring environments, one central authoring environment, and the live website environment](../../../images/wcm_authoring_decentralized.jpg)
 
 Decentralized authoring creates the risk of conflicting updates between authoring environments. To reduce the risk of conflicts, you can allocate different sites, or different sections of a site, to each authoring environment. You can also use different authoring environments for different user roles. For example, content authors might use a different authoring environment than presentation template designers.
 

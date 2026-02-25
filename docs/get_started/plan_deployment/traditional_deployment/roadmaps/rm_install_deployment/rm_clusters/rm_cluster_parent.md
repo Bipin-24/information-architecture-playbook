@@ -2,7 +2,7 @@
 
 Cluster topologies provide greater availability and capacity.
 
-![](../../../../../../images/atom-icon.jpg) For the failover environment roadmap for Actian Digital Experience offerings, see [Roadmap: Failover environment](https://help.actian.com/digital-experience/8.5/install/rm_cluster_parent.html).
+![](../../../images/atom-icon.jpg) For the failover environment roadmap for Actian Digital Experience offerings, see [Roadmap: Failover environment](https://help.actian.com/digital-experience/8.5/install/rm_cluster_parent.html).
 
 Video: [Creating an Actian Digital Experience 9.5 CF196 Cluster](https://www.youtube.com/watch?v=OQNdFcOIeWU)
 

@@ -8,13 +8,13 @@ A single website might have multiple testing environments. Some testing environm
 
 When you test in an authoring environment, a testing server is paired with an authoring server. The testing server simulates the delivery environment and is used to test major changes to a website.
 
-![Authoring environment that is configured to send and receive changes to and from a testing environment. Live changes are then sent to the website.](../../../../images/wcm_authoring_uat.jpg)
+![Authoring environment that is configured to send and receive changes to and from a testing environment. Live changes are then sent to the website.](../../../images/wcm_authoring_uat.jpg)
 
 ## System testing in a staging environment
 
 When you test in a staging environment, data from the authoring environment is syndicated to a staging environment. You conduct user-acceptance testing in the staging environment. If all elements pass the tests, data is syndicated from staging to the delivery production environment.
 
-![Diagram depicting flow from authoring, to staging, to the live website by using syndication of live items](../../../../images/wcm_staging_production.jpg)
+![Diagram depicting flow from authoring, to staging, to the live website by using syndication of live items](../../../images/wcm_staging_production.jpg)
 
 Specific activities take place in each environment.
 

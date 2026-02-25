@@ -6,10 +6,6 @@ const API_URL = 'https://actianzeenea.hcltechswnp.com';
 // Generate a random session ID for the chat
 let sessionId = `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
 
-
-// Track consent status
-let consentGiven = false;
-
 // Idle timeout configuration (30 minutes in milliseconds)
 const IDLE_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 
@@ -17,7 +13,6 @@ const IDLE_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 // Storage keys for persistence
 const STORAGE_KEYS = {
   SESSION_ID: 'miniChat_sessionId',
-  CONSENT_GIVEN: 'miniChat_consentGiven',
   CHAT_HISTORY: 'miniChat_history',
   LAST_QUESTION: 'miniChat_lastQuestion',
   LAST_ACTIVITY: 'miniChat_lastActivity'
@@ -50,10 +45,8 @@ function loadPersistedData() {
     }
    
     // Load consent status
-    const savedConsent = localStorage.getItem(STORAGE_KEYS.CONSENT_GIVEN);
-    if (savedConsent === 'true') {
-      consentGiven = true;
-    }
+    const savedConsent = localStorage.getItem('miniChat_consentGiven');
+    if (savedConsent) localStorage.removeItem('miniChat_consentGiven'); // clean up old key
    
     // Update last activity timestamp
     updateActivityTimestamp();
@@ -179,17 +172,14 @@ function clearPersistedChatData() {
 }
 
 
-// Clear session data including consent (used when session expires)
+// Clear session data (used when session expires)
 function clearSessionData() {
   try {
     localStorage.removeItem(STORAGE_KEYS.CHAT_HISTORY);
     localStorage.removeItem(STORAGE_KEYS.LAST_QUESTION);
     localStorage.removeItem(STORAGE_KEYS.SESSION_ID);
-    localStorage.removeItem(STORAGE_KEYS.CONSENT_GIVEN);
     localStorage.removeItem(STORAGE_KEYS.LAST_ACTIVITY);
-   
-    // Reset consent status
-    consentGiven = false;
+    localStorage.removeItem('miniChat_consentGiven'); // legacy cleanup
    
     // Generate new session ID
     sessionId = `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
@@ -209,7 +199,7 @@ function updateActivityTimestamp() {
 }
 
 
-// Check for session expiration and show consent modal if expired
+// Check for session expiration and reset if expired
 function checkSessionExpiration() {
   const lastActivity = localStorage.getItem(STORAGE_KEYS.LAST_ACTIVITY);
  
@@ -217,31 +207,9 @@ function checkSessionExpiration() {
     const timeSinceLastActivity = Date.now() - parseInt(lastActivity, 10);
    
     if (timeSinceLastActivity > IDLE_TIMEOUT) {
-      // Session expired
+      // Session expired - clear data and reset chat
       clearSessionData();
      
-      // Show consent modal again
-      const consentModal = document.querySelector('.sf-chatmodal');
-      const miniChatContainer = document.getElementById('mini-chat-container');
-      const miniChatInput = document.getElementById('mini-chat-input');
-      const miniChatSend = document.getElementById('mini-chat-send');
-      const quickActions = document.querySelectorAll('.mini-chat-quick-action');
-     
-      if (consentModal) {
-        consentModal.style.display = 'block';
-        consentModal.style.animation = '';
-      }
-     
-      if (miniChatContainer) {
-        miniChatContainer.classList.add('blurred');
-      }
-     
-      // Disable chat interactions
-      if (miniChatInput) miniChatInput.disabled = true;
-      if (miniChatSend) miniChatSend.disabled = true;
-      quickActions.forEach(btn => btn.disabled = true);
-     
-      // Clear chat messages
       const miniChatMessages = document.getElementById('mini-chat-messages');
       if (miniChatMessages) {
         miniChatMessages.innerHTML = '';
@@ -309,33 +277,6 @@ function createMiniChatElements() {
         </div>
       </div>
     </div>
-    <div class="sf-chatmodal">
-      <div class="sf-chatmodal-overlay">
-        <div class="sf-chatmodal-body">
-          <div class="sf-chatmodal-content">
-            <div>
-              <div class="sf-chatmodal-title">
-                Hi! Welcome to Zeenea
-              </div>
-              <div class="sf-chatmodal-description">
-                I am here to make your experience simpler and quicker by helping you anytime you need.
-              </div>
-              <div class="sf-chatmodal-checkbox-wrapper">
-                <input type="checkbox" id="sf-rbl-tnc-checkbox">
-                <label for="sf-rbl-tnc-checkbox">
-                  <div class="label-text">
-                    You are interacting with an AI assistant. Content is automatically generated - review carefully before use and avoid inclusion of personal or confidential information.
-                  </div>
-                </label>
-              </div>
-              <button class="sf-chatmodal-btn sf-confirm" disabled>
-                Get Started
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="mini-chat-input-area">
       <div class="mini-chat-input-wrapper">
         <textarea id="mini-chat-input" class="mini-chat-input" placeholder="Type your query here..." rows="1"></textarea>
@@ -372,9 +313,6 @@ function initMiniChatEventListeners() {
   const miniChatSend = document.getElementById('mini-chat-send');
   const miniChatMessages = document.getElementById('mini-chat-messages');
   const quickActions = document.querySelectorAll('.mini-chat-quick-action');
-  const consentModal = document.querySelector('.sf-chatmodal');
-  const consentAccept = document.querySelector('.sf-chatmodal-btn.sf-confirm');
-  const consentCheckbox = document.getElementById('sf-rbl-tnc-checkbox');
   const resizeHandle = document.querySelector('.mini-chat-resize-handle');
  
   // Resize functionality
@@ -423,61 +361,11 @@ function initMiniChatEventListeners() {
     });
   }
  
-  // Disable chat interactions until consent is given
-  miniChatInput.disabled = true;
-  miniChatSend.disabled = true;
-  quickActions.forEach(btn => btn.disabled = true);
- 
-  // Add blur effect to mini chat when modal is shown
-  if (consentModal && !consentGiven) {
-    miniChatContainer.classList.add('blurred');
-  }
- 
-  // Enable/disable accept button based on checkbox
-  if (consentCheckbox && consentAccept) {
-    consentCheckbox.addEventListener('change', function() {
-      consentAccept.disabled = !this.checked;
-    });
-  }
- 
-  // Consent accept handler
-  if (consentAccept) {
-    consentAccept.addEventListener('click', function() {
-      if (consentCheckbox.checked) {
-        consentGiven = true;
-       
-        // Save consent status to localStorage
-        localStorage.setItem(STORAGE_KEYS.CONSENT_GIVEN, 'true');
-       
-        // Update activity timestamp
-        updateActivityTimestamp();
-       
-        // Fade out modal
-        consentModal.style.animation = 'fadeOut 0.3s ease';
-        setTimeout(() => {
-          consentModal.style.display = 'none';
-          miniChatContainer.classList.remove('blurred');
-        }, 300);
-       
-        // Enable chat interactions
-        miniChatInput.disabled = false;
-        miniChatSend.disabled = false;
-        quickActions.forEach(btn => btn.disabled = false);
-       
-        miniChatInput.focus();
-      }
-    });
-  }
- 
-  // If consent was already given, skip the modal
-  if (consentGiven && consentModal) {
-    consentModal.style.display = 'none';
-    miniChatContainer.classList.remove('blurred');
-    miniChatInput.disabled = false;
-    miniChatSend.disabled = false;
-    quickActions.forEach(btn => btn.disabled = false);
-  }
- 
+  // Chat is immediately available - no disclaimer required
+  miniChatInput.disabled = false;
+  miniChatSend.disabled = true; // disabled until user types
+  quickActions.forEach(btn => btn.disabled = false);
+
   // Restore last question from localStorage
   const savedLastQuestion = localStorage.getItem(STORAGE_KEYS.LAST_QUESTION);
   if (savedLastQuestion && miniChatInput) {
@@ -486,19 +374,9 @@ function initMiniChatEventListeners() {
  
   // Toggle mini chat visibility
   miniChatButton.addEventListener('click', function() {
-    // Check if session expired before opening
-    if (checkSessionExpiration()) {
-      // Session expired, consent modal will be shown
-      miniChatContainer.classList.add('active');
-      return;
-    }
-   
+    checkSessionExpiration();
     miniChatContainer.classList.toggle('active');
-   
-    // Update activity timestamp when opening chat
-    if (consentGiven) {
-      updateActivityTimestamp();
-    }
+    updateActivityTimestamp();
   });
  
   // Close mini chat
@@ -665,6 +543,9 @@ function initMiniChatEventListeners() {
     const messageTextDiv = document.createElement('div');
     messageTextDiv.className = 'message-text';
    
+    // Preprocess: convert source URLs section into a markdown bullet list
+    message = formatSourceUrlsMarkdown(message);
+
     // Use marked.js to parse markdown and insert into message-text div
     try {
       // Configure marked to use proper HTML structure
@@ -781,8 +662,24 @@ function initMiniChatEventListeners() {
    
     return html;
   }
+
+  // Preprocess markdown: convert source URLs into a bullet list before marked.js parses it
+  function formatSourceUrlsMarkdown(text) {
+    // Match "Source URLs:" (or similar) followed by lines containing markdown links
+    const sourceUrlPattern = /(Source\s+URL[s]?\s*:\s*\n)([\s\S]*?)(\n\n|$)/gi;
+    return text.replace(sourceUrlPattern, function(match, header, urlBlock, trailing) {
+      // Split the URL block into individual lines and add bullet markers
+      const lines = urlBlock.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+      const bulletLines = lines.map(line => {
+        // If line already starts with - or *, leave it
+        if (/^[-*]\s/.test(line)) return line;
+        return '- ' + line;
+      });
+      return header + bulletLines.join('\n') + (trailing || '\n\n');
+    });
+  }
  
-  // Function to format source URLs to display one per line
+  // Function to format source URLs to display one per line (DOM-level fallback)
   function formatSourceUrls(container) {
     // Find all paragraphs that contain "Source URL" text
     const paragraphs = container.querySelectorAll('p');
@@ -818,19 +715,20 @@ function initMiniChatEventListeners() {
           if (textNodes.length > 0) {
             const labelText = document.createTextNode(textNodes.join(''));
             fragment.appendChild(labelText);
-            fragment.appendChild(document.createElement('br'));
           }
          
-          // Add each link on a separate line
-          links.forEach((link, index) => {
+          // Add each link as a bullet list item
+          const ul = document.createElement('ul');
+          ul.style.margin = '6px 0 0 0';
+          ul.style.paddingLeft = '20px';
+          links.forEach((link) => {
+            const li = document.createElement('li');
+            li.style.marginBottom = '4px';
             const linkClone = link.cloneNode(true);
-            fragment.appendChild(linkClone);
-           
-            // Add line break after each link except the last one
-            if (index < links.length - 1) {
-              fragment.appendChild(document.createElement('br'));
-            }
+            li.appendChild(linkClone);
+            ul.appendChild(li);
           });
+          fragment.appendChild(ul);
          
           // Replace the paragraph content
           p.innerHTML = '';

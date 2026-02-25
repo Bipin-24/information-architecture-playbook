@@ -8,13 +8,13 @@ Deploy a pre-rendered site when you are not using Actian DX features, such as po
 
 In a pre-rendered delivery environment, live items are syndicated from the authoring environment to the delivery environment. The content is converted into a set of static HTML files, which are then displayed to users through a web server.
 
-![Pre-render delivery environment](../../../../images/wcm_prerendering.jpg)
+![Pre-render delivery environment](../../../images/wcm_prerendering.jpg)
 
 ## Servlet delivery
 
 Use a website that a servlet delivers when you do not need to use portlet-based features such as authoring tools. In a servlet delivery environment, content is syndicated from the authoring server to the delivery server. The Actian Web Content Manager servlet displays the content. Site visitors access the site through a web server.
 
-![Servlet rendering environment](../../../../images/wcm_servlet_rendering.jpg)
+![Servlet rendering environment](../../../images/wcm_servlet_rendering.jpg)
 
 ## Portlet delivery
 
@@ -22,7 +22,7 @@ A Web Content Viewer is a portlet that displays content from a web content libra
 
 In a portlet delivery environment, content is syndicated from the authoring server to the delivery server. It is displayed to users through a web content viewer portlet that is deployed on a portal server. When a local web content viewer is used, the web content viewer portlet is deployed on the same server as Actian Web Content Manager.
 
-![Portlet rendering environment](../../../../images/wcm_portlet_rendering.jpg)
+![Portlet rendering environment](../../../images/wcm_portlet_rendering.jpg)
 
 ## Remote portlet delivery
 
@@ -30,7 +30,7 @@ You can use Web Services for Remote Portlets (WSRP) support in the web content v
 
 In a remote portlet delivery environment, content is syndicated from the authoring server to an Actian Web Content Manager server in the delivery environment. The web content viewer portlet is deployed on the HCLWeb Content Manager server. It is configured to communicate with the WSRP proxy portlet that is installed on a portal server in the delivery environment. Users view web content by accessing the proxy portlet on the remote portal server, typically through a web server.
 
-![Remote portlet delivery environment](../../../../images/wcm_remote_rendering.jpg)
+![Remote portlet delivery environment](../../../images/wcm_remote_rendering.jpg)
 
 ???+ info "Related information"
     - [Actian Web Content Manager \(WCM\) environments](../wcm_env/index.md)

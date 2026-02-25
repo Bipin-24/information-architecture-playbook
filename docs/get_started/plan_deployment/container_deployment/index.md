@@ -35,7 +35,7 @@ hcl-dx-deployment/
 
 ## Helm deployment flow
 
-![Helm deployment flow](../../../images/helm_chart_deployment_flow.png)
+![Helm deployment flow](../../images/helm_chart_deployment_flow.png)
 
 The flow chart shows that when you install or upgrade, the Helm chart reads the `values.yaml` file \(and overridden values, either provided through Helm CLI parameters or additional values files\). Then, the Helm chart validates the schema. After the schema is validated positively, Helm runs the templating engine to create the Kubernetes resource definitions from the templates in the Helm charts.
 
@@ -49,7 +49,7 @@ Each deployed application has a similar deployment structure and use a common se
 
 **Stateful applications**
 
-![Stateful applications](../../../images/helm_chart_stateful_applications_definition.png)
+![Stateful applications](../../images/helm_chart_stateful_applications_definition.png)
 
 DX 9.5 container applications are managed by a StatefulSet, which controls the creation and lifecycle of all pods it is responsible for. These pods store their application in persistent volumes. They use ConfigMaps to adjust application configuration and Secrets to access credentials.
 
@@ -57,7 +57,7 @@ Before all pods is a service that manages routing traffic to the Pods. This Serv
 
 **Stateless applications: Services management**
 
-![Stateless applications](../../../images/helm_chart_stateless_applications_services_management.png)
+![Stateless applications](../../images/helm_chart_stateless_applications_services_management.png)
 
 **HAProxy and routing**
 
