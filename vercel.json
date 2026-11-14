@@ -1,6 +1,7 @@
 {
-  "installCommand": "uv pip install --system -r requirements.txt",
-  "buildCommand": "mkdocs build",
-  "outputDirectory": "site",
-  "devCommand": "mkdocs serve"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next"
 }

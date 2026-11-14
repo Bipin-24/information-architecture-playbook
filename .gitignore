@@ -1,29 +1,27 @@
-# MkDocs build output
-site/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-*.egg-info/
-dist/
-build/
+# next.js
+/.next/
+/out/
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# production
+/build
 
-# OS
+# misc
 .DS_Store
-Thumbs.db
+*.pem
+npm-debug.log*
 
-# Vercel
+# env files (never commit secrets)
+.env*
+!.env.example
+
+# vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

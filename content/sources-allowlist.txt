@@ -1,0 +1,31 @@
+# Source URLs that were opened and verified during research (2026-11-14).
+# The content checker rejects any article source that is not listed here.
+https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/part02.html
+https://en.wikipedia.org/wiki/Information_architecture
+https://jarango.com/2025/02/21/jorges-wager-why-ai-needs-information-architecture/
+https://www.designprinciplesftw.com/collections/eight-principles-of-information-architecture
+https://www.nngroup.com/articles/card-sorting-definition/
+https://www.nngroup.com/articles/tree-testing/
+https://www.nngroup.com/articles/3-click-rule/
+https://en.wikipedia.org/wiki/Information_foraging
+https://www.w3.org/TR/skos-reference/
+https://www.w3.org/TR/shacl/
+https://diataxis.fr/start-here/
+https://diataxis.fr/
+https://arxiv.org/abs/2005.11401
+https://arxiv.org/abs/2307.03172
+https://www.anthropic.com/engineering/contextual-retrieval
+https://arxiv.org/abs/2409.04701
+https://arxiv.org/abs/2404.16130
+https://arxiv.org/abs/2309.15217
+https://arxiv.org/abs/2311.09735
+https://www.nngroup.com/articles/ai-changing-search-behaviors/
+https://developers.google.com/search/docs/appearance/ai-features
+https://llmstxt.org/
+https://modelcontextprotocol.io/docs/learn/architecture
+https://jarango.com/2024/05/12/empowering-information-architecture-with-ai-making-it-real/
+https://jarango.com/2024/10/15/scale-smart-ai-powered-content-organization-strategies/
+https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/
+https://en.wikipedia.org/wiki/Peter_Morville
+https://modelcontextprotocol.io/specification
